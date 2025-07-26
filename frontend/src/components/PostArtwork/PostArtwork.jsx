@@ -76,6 +76,7 @@ function PostArtwork() {
           method: "POST",
           body: formImage,
           cache: "default",
+          credentials: "include",
         }
       );
       const artworkId = await data.json();
@@ -87,6 +88,7 @@ function PostArtwork() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(anecdoteData),
+        credentials: "include",
       });
     }
   };

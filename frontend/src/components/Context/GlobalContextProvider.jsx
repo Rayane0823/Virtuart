@@ -204,7 +204,8 @@ function GlobalContextProvider({ children }) {
 
   const getFavorites = async () => {
     const favoritesResponse = await fetch(
-      `${import.meta.env.VITE_BACKEND_URL}/api/favorite/${userProfil.id}`
+      `${import.meta.env.VITE_BACKEND_URL}/api/favorite/${userProfil.id}`,
+      { credentials: "include" }
     );
     const userFavorites = await favoritesResponse.json();
     setFavorites(userFavorites);
@@ -254,8 +255,7 @@ function GlobalContextProvider({ children }) {
 }
 
 function useGlobalContext() {
-  const context = useContext(GlobalContext);
-  return context;
+  return useContext(GlobalContext);
 }
 
 export { GlobalContextProvider, useGlobalContext };
