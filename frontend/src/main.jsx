@@ -61,10 +61,12 @@ const router = createBrowserRouter([
     ),
     loader: async () => {
       const artworksResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`,
+        { credentials: "include" }
       );
       const artistsResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artist`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artist`,
+        { credentials: "include" }
       );
       const artworks = await artworksResponse.json();
       const artists = await artistsResponse.json();
@@ -85,10 +87,12 @@ const router = createBrowserRouter([
     ),
     loader: async () => {
       const artworksResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`,
+        { credentials: "include" }
       );
       const artistsResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artist`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artist`,
+        { credentials: "include" }
       );
       const artworks = await artworksResponse.json();
       const artists = await artistsResponse.json();
@@ -109,10 +113,12 @@ const router = createBrowserRouter([
     ),
     loader: async () => {
       const artworksResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artwork`,
+        { credentials: "include" }
       );
       const artistsResponse = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/artist`
+        `${import.meta.env.VITE_BACKEND_URL}/api/artist`,
+        { credentials: "include" }
       );
       const artworks = await artworksResponse.json();
       const artists = await artistsResponse.json();
