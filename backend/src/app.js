@@ -29,7 +29,8 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: "https://virtuart1.vercel.app/",
+    credentials: true,
   })
 );
 
