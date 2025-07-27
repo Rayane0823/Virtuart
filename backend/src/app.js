@@ -27,8 +27,6 @@ const app = express();
 
 const cors = require("cors");
 
-const path = require("path");
-
 app.use(
   cors({
     origin: "https://virtuart1.vercel.app",
@@ -109,10 +107,6 @@ app.use(express.static("public"));
 // Serve react resources
 
 // Redirect unhandled requests to the react index file
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
-});
 
 /* ************************************************************************* */
 
