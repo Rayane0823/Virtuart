@@ -84,6 +84,8 @@ app.use(express.json());
 // Import the API routes from the router module
 const router = require("./router");
 
+app.use(express.static(path.join(__dirname, "public")));
+
 // Mount the API routes under the "/api" endpoint
 app.use("/api", router);
 
