@@ -16,7 +16,11 @@ const validatePassword = async (req, res, next) => {
       process.env.APP_SECRET,
       { expiresIn: "24h" }
     );
-    res.cookie("access_token", token, { httpOnly: true });
+    res.cookie("access_token", token, {
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    });
     next();
   } else {
     res.status(404).send("Invalid Password");
