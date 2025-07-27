@@ -27,6 +27,7 @@ function LikeFunction({ className, id }) {
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
+          credentials: "include",
         }
       );
     } else {
