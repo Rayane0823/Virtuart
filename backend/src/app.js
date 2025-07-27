@@ -27,6 +27,8 @@ const app = express();
 
 const cors = require("cors");
 
+const path = require("path");
+
 app.use(
   cors({
     origin: "https://virtuart1.vercel.app",
@@ -104,16 +106,12 @@ app.use("/api", router);
 
 app.use(express.static("public"));
 
-const reactBuildPath = `${__dirname}/../../frontend/dist`;
-
 // Serve react resources
-
-app.use(express.static(reactBuildPath));
 
 // Redirect unhandled requests to the react index file
 
 app.get("*", (req, res) => {
-  res.sendFile(`${reactBuildPath}/index.html`);
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 /* ************************************************************************* */
