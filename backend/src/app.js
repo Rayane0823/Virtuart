@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+const path = require("path");
+
 // Configure it
 
 /* ************************************************************************* */
@@ -102,7 +104,10 @@ app.use("/api", router);
 // 1. Uncomment the lines related to serving static files and redirecting unhandled requests.
 // 2. Ensure that the `reactBuildPath` points to the correct directory where your frontend's build artifacts are located.
 
-app.use(express.static("public"));
+app.use(
+  "/assets/images",
+  express.static(path.join(__dirname, "public/assets/images"))
+);
 
 // Serve react resources
 
